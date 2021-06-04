@@ -20,3 +20,6 @@
   <h1 class="display-3">Welcome to my website</h1>
   <p class="lead">I'm a developer and designer. Check my portfolio below</p>
 </div>
+// To use lazy loading, set a data-lazy attribute
+// on your img tags and leave off the src
+<img src="img/1.jpg" width="200" height="100" alt="Land">
