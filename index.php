@@ -1,3 +1,7 @@
+<?php
+include 'header.php';
+?>
+
 <nav class="navbar navbar-light bg-light">
     <a href="#" class="navbar-brand">My portfolio</a>
 </nav>
@@ -22,4 +26,4 @@
 </div>
 // To use lazy loading, set a data-lazy attribute
 // on your img tags and leave off the src
-<img src="img/1.jpg" width="200" height="100" alt="Land">
+<img src="img/2.jpg"  alt="Land">
