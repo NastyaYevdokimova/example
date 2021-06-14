@@ -53,4 +53,5 @@ function my_custom_init(){
 		'menu_position'      => null,
 		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
 	) );
+
 }
