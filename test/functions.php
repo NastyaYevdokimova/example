@@ -23,3 +23,34 @@ function add_Main_Nav() {
 }
 // Подхватывает (hook) init хук-событие, запускает функцию нашего навигационного меню
 add_action( 'init', 'add_Main_Nav' );
+add_action('init', 'my_custom_init');
+function my_custom_init(){
+	register_post_type('picture', array(
+		'labels'             => array(
+			'name'               => 'Картина', // Основное название типа записи
+			'singular_name'      => 'Картина', // отдельное название записи типа picture
+			'add_new'            => 'Добавить новую',
+			'add_new_item'       => 'Добавить новую картину',
+			'edit_item'          => 'Редактировать картину',
+			'new_item'           => 'Новая картина',
+			'view_item'          => 'Посмотреть картину',
+			'search_items'       => 'Найти картину',
+			'not_found'          => 'Картин не найдено',
+			'not_found_in_trash' => 'В корзине картин не найдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Картины'
+
+		  ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => true,
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+	) );
+}
