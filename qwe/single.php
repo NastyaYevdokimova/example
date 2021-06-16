@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main class="wrap">
-  <section class="content-area content-thin">
+  <section class="content-area content-full-width">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
       <article class="article-full">
         <header>
@@ -13,6 +13,7 @@
         <p>Извините, записи не были найдены!</p>
       </article>
 <?php endif; ?>
-  </section><?php get_sidebar(); ?>
+  </section>
+  
 </main>
 <?php get_footer(); ?>

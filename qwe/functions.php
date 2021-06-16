@@ -1,6 +1,5 @@
 <?php
-update_option('siteurl', 'http://localhost/wordpress');
-update_option('home', 'http://localhost/wordpress');
+
 // Эта функция помещает файл Normalize.css в очередь для использования. Первый параметр это имя таблицы стилей, второе это URL. Здесь мы
 // используем онлайн версию css файла.
 function add_normalize_CSS() {
@@ -25,9 +24,8 @@ function add_Main_Nav() {
 }
 // Подхватывает (hook) init хук-событие, запускает функцию нашего навигационного меню
 add_action( 'init', 'add_Main_Nav' );
-add_action('init', 'my_custom_init');
 function my_custom_init(){
-	register_post_type('artict', array(
+	register_post_type('artists', array(
 		'labels'             => array(
 			'name'               => 'Художник', // Основное название типа записи
 			'singular_name'      => 'Художник', // отдельное название записи типа artict
@@ -57,3 +55,5 @@ function my_custom_init(){
 	) );
 
 }
+add_action('init', 'my_custom_init');
+

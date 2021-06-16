@@ -1,5 +1,5 @@
 <footer>
-      <p>Copyright &copy; 2021</p>
+      <p><center>Copyright &copy;  2021</p>
     </footer>
     <?php wp_footer(); ?>
   </body>
