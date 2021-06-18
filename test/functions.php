@@ -1,8 +1,17 @@
 <?php
-update_option('siteurl', 'http://localhost/wordpress');
-update_option('home', 'http://localhost/wordpress');
-// Эта функция помещает файл Normalize.css в очередь для использования. Первый параметр это имя таблицы стилей, второе это URL. Здесь мы
-// используем онлайн версию css файла.
+/**
+ * Функция подключения стилей и скриптов
+ */
+function bootstrap_styles_scripts() {
+ // подключение стилей
+ wp_enqueue_style( 'bootstrap', plugin_dir_url( __FILE__ ) . 'inc/bootstrap/css/bootstrap.min.css' );
+ 
+ // подключение стилей
+ wp_enqueue_script( 'bootstrap_js', plugin_dir_url( __FILE__ ) . 'inc/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
+ 
+}
+ 
+add_action( 'wp_enqueue_scripts', 'bootstrap_styles_scripts' );
 function add_normalize_CSS() {
     wp_enqueue_style( 'normalize-styles', "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
 }
@@ -25,9 +34,8 @@ function add_Main_Nav() {
 }
 // Подхватывает (hook) init хук-событие, запускает функцию нашего навигационного меню
 add_action( 'init', 'add_Main_Nav' );
-add_action('init', 'my_custom_init');
 function my_custom_init(){
-	register_post_type('artict', array(
+	register_post_type('artist', array(
 		'labels'             => array(
 			'name'               => 'Художник', // Основное название типа записи
 			'singular_name'      => 'Художник', // отдельное название записи типа artict
@@ -57,3 +65,5 @@ function my_custom_init(){
 	) );
 
 }
+add_action('init', 'my_custom_init');
+

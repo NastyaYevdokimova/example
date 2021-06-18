@@ -1,3 +1,4 @@
+
 <?php get_header(); ?>
 <main class="wrap">
   <section class="content-area content-thin">
@@ -14,5 +15,6 @@
       </article>
 <?php endif; ?>
   </section><?php get_sidebar(); ?>
+ 
 </main>
 <?php get_footer(); ?>
