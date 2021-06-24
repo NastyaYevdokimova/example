@@ -1,5 +1,7 @@
 
 <?php get_header(); ?>
+<?php show_book(); ?>
+
 <main class="wrap">
   <section class="content-area content-thin">
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

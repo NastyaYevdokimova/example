@@ -67,3 +67,7 @@ function my_custom_init(){
 }
 add_action('init', 'my_custom_init');
 
+
+if (function_exists('get_books')) {
+ get_books();
+}
